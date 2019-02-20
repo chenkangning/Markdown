@@ -224,3 +224,26 @@ suid/nisuid | 具有/不具百SUID权限，设定文件系统是否具有SUID和
 user/nouesr | 允许/不允许普通用户挂载，设定文件系统是否允许普通用户挂载，默认不允许
 usrquota | 㝍入代表文件系统支持用户磁盘配额，默认不支持
 grpquota | 写入代表文件系统支持组磁盘配额，默认不支持
+
+* 挂载光盘
+    * [root@localost ~]#mkdir /mnt/cdrom/
+        * #建立挂载点
+    * [root@localost ~]#mount -t iso9660 /dev/cdrom  /mnt/cdrom/
+        * #挂载光盘
+    * [root@localost ~]#mount /dev/sr0  /mnt/cdrom
+
+* 卸载命令
+    * [root@localost ~]#umount 设备文件名或挂载点
+        * [root@localost ~]#umount /mnt/cdrom/
+
+
+* 挂载U盘
+    * [root@localost ~]#fdisk -l
+        * #査看U盘设备文件名
+    * [root@localost ~]#mount -t vfat /dev/sdb1/mnt/usb/
+    * 注意：Linux默认是不支持NTFS文件系统的
+
+* 査看登录用户信息
+    * w 用户名
+    命令输出：
+        * USER：登陆的用户名；
